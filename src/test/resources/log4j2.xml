@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="log4j2.xsd" status="WARN">
+ 
+    <Properties>
+        <Property name="filename">logs</Property>
+        <Property name="pattern">[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n</Property>
+    </Properties>
+ 
+    <Appenders>
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="${pattern}"/>
+        </Console>
+ 
+        <File name="LOGINLOG" fileName="${filename}/LoginTest.log">
+            <PatternLayout pattern="${pattern}"/>
+        </File>
+ 
+        <File name="HOMELOG" fileName="${filename}/HomeTest.log">
+            <PatternLayout pattern="${pattern}"/>
+        </File>
+ 
+        <File name="PIMLOG" fileName="${filename}/PIMTest.log">
+            <PatternLayout pattern="${pattern}"/>
+        </File>
+ 
+        <File name="ADDEMPLOYEELOG" fileName="${filename}/AddEmployeeTest.log">
+            <PatternLayout pattern="${pattern}"/>
+        </File>
+ 
+        <File name="DELETEEMPLOG" fileName="${filename}/DeleteEmpTest.log">
+            <PatternLayout pattern="${pattern}"/>
+        </File>
+    </Appenders>
+ 
+    <Loggers>
+		
+        <Logger name="pages.LoginPage" level="info" additivity="false">
+            <AppenderRef ref="STDOUT"/>
+            <AppenderRef ref="LOGINLOG"/>
+        </Logger>
+        <Logger name="tests.LoginTest" level="info" additivity="false">
+            <AppenderRef ref="STDOUT"/>
+            <AppenderRef ref="LOGINLOG"/>
+        </Logger>
+ 
+        <Logger name="pages.HomePage" level="info" additivity="false">
+            <AppenderRef ref="STDOUT"/>
+            <AppenderRef ref="HOMELOG"/>
+        </Logger>
+        <Logger name="tests.HomeTest" level="info" additivity="false">
+            <AppenderRef ref="STDOUT"/>
+            <AppenderRef ref="HOMELOG"/>
+        </Logger>
+ 
+        <Logger name="pages.PIMPage" level="info" additivity="false">
+            <AppenderRef ref="STDOUT"/>
+            <AppenderRef ref="PIMLOG"/>
+        </Logger>
+        <Logger name="tests.PIMTest" level="info" additivity="false">
+            <AppenderRef ref="STDOUT"/>
+            <AppenderRef ref="PIMLOG"/>
+        </Logger>
+ 
+        <Logger name="pages.AddEmployeePage" level="info" additivity="false">
+            <AppenderRef ref="STDOUT"/>
+            <AppenderRef ref="ADDEMPLOYEELOG"/>
+        </Logger>
+        <Logger name="pages.EmployeeDetailsPage" level="info" additivity="false">
+            <AppenderRef ref="STDOUT"/>
+            <AppenderRef ref="ADDEMPLOYEELOG"/>
+        </Logger>
+        <Logger name="tests.AddEmployeeTest" level="info" additivity="false">
+            <AppenderRef ref="STDOUT"/>
+            <AppenderRef ref="ADDEMPLOYEELOG"/>
+        </Logger>
+ 
+        <Logger name="pages.DeleteEmpPage" level="info" additivity="false">
+            <AppenderRef ref="STDOUT"/>
+            <AppenderRef ref="DELETEEMPLOG"/>
+        </Logger>
+         <Logger name="tests.DeleteEmpTest" level="info" additivity="false">
+            <AppenderRef ref="STDOUT"/>
+            <AppenderRef ref="DELETEEMPLOG"/>
+        </Logger>
+ 
+        <Root level="info">
+            <AppenderRef ref="STDOUT"/>
+        </Root>
+    </Loggers>
+</Configuration>
