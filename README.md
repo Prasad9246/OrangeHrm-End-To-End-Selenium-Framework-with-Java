@@ -16,7 +16,7 @@ This repository contains an end-to-end Selenium testing framework for OrangeHRM,
 
 ## Getting Started
 
-### Prerequisites
+### Prerequisites 
 
 - Java Development Kit (JDK)
 - Apache Maven
